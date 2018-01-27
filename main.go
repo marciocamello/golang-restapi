@@ -1,5 +1,7 @@
+// Setup main package
 package main
 
+// Import dependencies
 import (
 	"encoding/json"
 	"log"
@@ -86,6 +88,7 @@ func deleteBook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(books)
 }
 
+// Main function
 func main() {
 	// Init Router
 	r := mux.NewRouter()
@@ -101,5 +104,6 @@ func main() {
 	r.HandleFunc("/api/books/{id}", updateBook).Methods("PUT")
 	r.HandleFunc("/api/books/{id}", deleteBook).Methods("DELETE")
 
+	// Listen server and log errors
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
