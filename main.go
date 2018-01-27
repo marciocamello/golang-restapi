@@ -25,6 +25,11 @@ type Author struct {
 	Lastname	string `json:"lastname"`
 }
 
+// Default route or invalid route
+func getIndex(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Please check documentation to usage this API"))
+}
+
 // Init books var as slice Book struct
 var books []Book
 
@@ -98,6 +103,7 @@ func main() {
 	books = append(books, Book{ID: "2", Isbn:"847564", Title:"Book Two", Author:&Author{Firstname: "Rayane", Lastname:"Lima"}})
 
 	// Route Handlers / Endpoints
+	r.HandleFunc("/", getIndex).Methods("GET")
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
 	r.HandleFunc("/api/books/{id}", getBook).Methods("GET")
 	r.HandleFunc("/api/books", createBook).Methods("POST")
