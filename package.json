@@ -1,0 +1,10 @@
+{
+  "name": "golang-restapi",
+  "version": "1.0.0",
+  "main": "main.go",
+  "license": "MIT",
+  "scripts": {
+    "win": "go build && ./golang-restapi.exe",
+    "unix": "go build && ./golang-restapi"
+  }
+}
