@@ -62,7 +62,6 @@ go build && ./golang-restapi
 
 ```json
 {
-    "id": "3",
     "isbn": "6456365",
     "title": "Book Three",
     "author": {
