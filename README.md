@@ -1,5 +1,9 @@
 # GoLang RestApi with Gorilla Mux
 
+## Install GO
+
+* https://golang.org/dl/
+
 ## Windows
 
 ```bash
