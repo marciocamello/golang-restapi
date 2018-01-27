@@ -27,6 +27,7 @@ type Author struct {
 
 // Default route or invalid route
 func getIndex(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-type", "application/json")
 	w.Write([]byte("Please check documentation to usage this API"))
 }
 
